@@ -12,23 +12,3 @@ print("Start")
 # create a new list of (r,g,b)
 # update <buffer>[x,y] with the new list
 # save <reference> with <reference>.save("filename.ext", "ext"
-
-from PIL import Image
-
-image = Image.open("bridge.jpg")
-buffer = image.load()
-width = image.size[0]
-height = image.size[1]
-
-for y in range(height):
-  for x in range(width):
-    pixel = buffer[x,y]
-
-    r = pixel[0]
-    g = pixel[1]
-    b = pixel[2]
-
-    grayscale = (r,r,r)
-    buffer[x,y] = grayscale
-
-image.save("out.png", "png")
